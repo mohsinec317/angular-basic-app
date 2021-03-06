@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoadjsonService } from '../loadjson.service';
 
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+
 @Component({
   selector: 'app-listview',
   templateUrl: './listview.component.html',
@@ -15,6 +19,18 @@ export class ListviewComponent implements OnInit {
     private service: LoadjsonService
   ) {}
 
+  myControl = new FormControl();
+  options: string[] = ['One', 'Two', 'Three'];
+  filteredOptions: any;
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(
+      (option) => option.toLowerCase().indexOf(filterValue) === 0
+    );
+  }
+
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       // console.log(params.value);
@@ -23,6 +39,11 @@ export class ListviewComponent implements OnInit {
         console.log(res);
         this.json = res;
       });
+
+      this.filteredOptions = this.myControl.valueChanges.pipe(
+        startWith(''),
+        map((value) => this._filter(value))
+      );
 
       // this.json[this.id];
 
