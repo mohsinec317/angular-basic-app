@@ -11,11 +11,14 @@ import { LoadjsonService } from './loadjson.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InnerviewComponent } from './innerview/innerview.component';
+import { LivevideoComponent } from './livevideo/livevideo.component';
+import { LaunchscreenComponent } from './launchscreen/launchscreen.component';
 
 const appRoutes: Routes = [];
 
 @NgModule({
-  declarations: [AppComponent, DetailsComponent, ListviewComponent],
+  declarations: [AppComponent, DetailsComponent, ListviewComponent, InnerviewComponent, LivevideoComponent, LaunchscreenComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

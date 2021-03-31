@@ -13,11 +13,17 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class ListviewComponent implements OnInit {
   id: any;
+  mypagename: any;
   json: any;
   constructor(
     private route: ActivatedRoute,
     private service: LoadjsonService
   ) {}
+
+
+  counter(i: number) {
+    return new Array(i);
+}
 
   myControl = new FormControl();
   options: string[] = ['One', 'Two', 'Three'];
@@ -35,8 +41,10 @@ export class ListviewComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       // console.log(params.value);
       this.id = params.value;
+      this.mypagename = params.mypagename;
+      console.log(params);
       this.service.loadmyjson(this.id).subscribe((res) => {
-        console.log(res);
+        // console.log([res]);
         this.json = res;
       });
 

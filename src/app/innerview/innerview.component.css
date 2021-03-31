@@ -1,0 +1,12 @@
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  .arabic-text {
+    text-align: right;
+    padding: 10px 20px 20px 20px;
+  }
+
+  .extra-space {
+    margin-top: 10px;
+  }
+}

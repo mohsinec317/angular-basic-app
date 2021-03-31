@@ -1,0 +1,14 @@
+<!-- {{ surahdetails["verse"] | json }} -->
+
+<mat-toolbar class="header-section">
+  <span>Surah {{ surahname }}</span>
+  <span style="margin-left: auto">سورة {{ arsurahname }}</span>
+</mat-toolbar>
+
+<div class="extra-space"></div>
+<div class="arabic-text" *ngFor="let item of surahdetails['verse'] | keyvalue">
+  <p class="arfont">
+    {{ item.value }}
+  </p>
+  <mat-divider></mat-divider>
+</div>

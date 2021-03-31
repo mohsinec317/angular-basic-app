@@ -1,13 +1,14 @@
-<!-- {{ json | json }} -->
 <!-- <div *ngFor="let i of json">
   {{ i.id }}
   <div *ngFor="let j of i['something']">
     {{ j.def.start }}
   </div>
 </div> -->
-<p>Hello</p>
+<mat-toolbar class="header-section">
+  <span>{{ mypagename }}</span>
+</mat-toolbar>
 
-<form class="example-form">
+<!-- <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Number</mat-label>
     <input
@@ -27,4 +28,38 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-</form>
+</form> -->
+
+<!-- {{ json | json }} -->
+
+<mat-selection-list #surah [multiple]="false">
+  <mat-list-option *ngFor="let in of counter(100); let i = index">
+    <a
+      [routerLink]="['/innerview']"
+      [queryParams]="{
+        value: json[i]['index'],
+        surahname: json[i]['title'],
+        arsurahname: json[i]['titleAr']
+      }"
+    >
+      {{ json[i]["index"] | number }}. {{ json[i]["title"] }}
+      {{ json[i]["titleAr"] }}
+    </a>
+    <mat-divider></mat-divider>
+  </mat-list-option>
+</mat-selection-list>
+
+<!-- <h3 *ngFor="let in of counter(100); let i = index">
+  {{ json[i]["index"] }} {{ json[i]["title"] }}
+</h3> -->
+
+<!-- {{ json.length | json }} -->
+
+<!-- <p *ngFor="let a of json">
+  {{ a }}
+</p> -->
+
+<!-- {{ item | json }} -->
+
+<!-- <p>Testing</p>
+    <div *ngIf="items.value" | number>{{ items }}</div> -->

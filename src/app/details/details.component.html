@@ -1,15 +1,16 @@
 <!-- Toolbar -->
+<mat-toolbar class="header-section">
+  <img src="../assets/headerimage.png" style="width: 50px" />
+  <span style="margin-left: 10px"> App name</span>
+</mat-toolbar>
 <div class="app-body">
-  <p class="greeting">Title text</p>
-  <p>Description text..........</p>
-
   <div class="product-all-contents">
-    <p class="my-title">Heading 1</p>
+    <p class="my-title">Quran Shareef</p>
 
     <div class="product-contents">
       <div
         [routerLink]="['/listview']"
-        [queryParams]="{ value: 'testing.json' }"
+        [queryParams]="{ value: 'surah.json', mypagename: 'Surah' }"
         class="product"
       >
         <p>Text</p>
@@ -38,11 +39,11 @@
   </div>
 
   <div class="product-all-contents">
-    <p class="my-title">Heading 2</p>
+    <p class="my-title">Basics</p>
 
     <div class="product-contents">
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
+      <div class="product"><p>Kalima</p></div>
+      <div class="product"><p>Dua</p></div>
       <div class="product"><p>Text</p></div>
       <div class="product"><p>Text</p></div>
       <div class="product"><p>Text</p></div>
@@ -52,58 +53,98 @@
   </div>
 
   <div class="product-all-contents">
-    <p class="my-title">Heading 3</p>
+    <p class="my-title">View Live!</p>
 
-    <div class="product-contents">
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
+    <div class="product-contents-big">
+      <div
+        class="product bigtemplate"
+        style="
+          background-image: url('../assets/Makkah Live.jpg');
+          background-repeat: no-repeat;
+          background-size: 300px 150px;
+        "
+        [routerLink]="['/livevideo']"
+        [queryParams]="{
+          name: 'Makkah Live',
+          url: 'makkah'
+        }"
+      >
+        <!-- <p>Makkah Live</p> -->
+      </div>
+      <div
+        class="product bigtemplate"
+        style="
+          background-image: url('../assets/Madina Live.jpg');
+          background-repeat: no-repeat;
+          background-size: 300px 150px;
+        "
+        [routerLink]="['/livevideo']"
+        [queryParams]="{
+          name: 'Madina Live',
+          url: 'madina'
+        }"
+      ></div>
     </div>
   </div>
 
   <div class="product-all-contents">
-    <p class="my-title">Heading 4</p>
+    <p class="my-title">Video Loops</p>
 
-    <div class="product-contents">
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
+    <div class="product-contents-big">
+      <div
+        class="product bigtemplate"
+        style="
+          background-image: url('../assets/99names thumbnail.png');
+          background-repeat: no-repeat;
+          background-size: 250px 150px;
+        "
+        [routerLink]="['/livevideo']"
+        [queryParams]="{
+          name: '99 Names of Allah Loop',
+          url: '99names'
+        }"
+      ></div>
+      <div
+        class="product bigtemplate"
+        style="
+          background-image: url('../assets/azaan loop thumbnail.png');
+          background-repeat: no-repeat;
+          background-size: 250px 150px;
+        "
+        [routerLink]="['/livevideo']"
+        [queryParams]="{
+          name: 'Azaan Loop',
+          url: 'azaanloop'
+        }"
+      ></div>
     </div>
-  </div>
 
-  <div class="product-all-contents">
-    <p class="my-title">Heading 5</p>
+    <div class="product-all-contents">
+      <p class="my-title">Heading 5</p>
 
-    <div class="product-contents">
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
+      <div class="product-contents">
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+      </div>
     </div>
-  </div>
 
-  <div class="product-all-contents">
-    <p class="my-title">Heading 6</p>
+    <div class="product-all-contents">
+      <p class="my-title">Heading 6</p>
 
-    <div class="product-contents">
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
-      <div class="product"><p>Text</p></div>
+      <div class="product-contents">
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+        <div class="product"><p>Text</p></div>
+      </div>
     </div>
   </div>
 </div>
